@@ -21,7 +21,7 @@ use Mockery;
 trait MockeryTrait
 {
     /**
-     * Tear down the test case.
+     * Tear down mockery.
      *
      * @after
      *
