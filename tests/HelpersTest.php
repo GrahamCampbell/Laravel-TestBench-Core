@@ -38,7 +38,7 @@ class HelpersTest extends TestCase
 
     public function testMethodDoesExist()
     {
-        $this->assertMethodExists('getBar', 'GrahamCampbell\Tests\TestBenchCore\FooStub');
+        $this->assertMethodExists('getBar', FooStub::class);
     }
 
     /**
@@ -46,7 +46,7 @@ class HelpersTest extends TestCase
      */
     public function testMethodDoesNotExist()
     {
-        $this->assertMethodExists('getFoo', 'GrahamCampbell\Tests\TestBenchCore\FooStub');
+        $this->assertMethodExists('getFoo', FooStub::class);
     }
 
     public function testInJson()
