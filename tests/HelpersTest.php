@@ -11,15 +11,18 @@
 
 namespace GrahamCampbell\Tests\TestBenchCore;
 
-use GrahamCampbell\TestBenchCore\AbstractTestCase;
+use GrahamCampbell\TestBenchCore\HelperTrait;
+use PHPUnit_Framework_TestCase as TestCase;
 
 /**
  * This is the helpers test class.
  *
  * @author Graham Campbell <graham@cachethq.io>
  */
-class HelpersTest extends AbstractTestCase
+class HelpersTest extends TestCase
 {
+    use HelperTrait;
+
     public function testInArray()
     {
         $this->assertInArray('foo', ['foo']);
