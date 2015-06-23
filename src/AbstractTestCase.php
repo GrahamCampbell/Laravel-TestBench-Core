@@ -11,8 +11,6 @@
 
 namespace GrahamCampbell\TestBenchCore;
 
-use GrahamCampbell\TestBenchCore\HelperTrait;
-use GrahamCampbell\TestBenchCore\MockeryTrait;
 use PHPUnit_Framework_TestCase as TestCase;
 
 /**

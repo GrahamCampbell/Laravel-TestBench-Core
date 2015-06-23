@@ -11,7 +11,6 @@
 
 namespace GrahamCampbell\TestBenchCore;
 
-use InvalidArgumentException;
 use Mockery;
 
 /**
