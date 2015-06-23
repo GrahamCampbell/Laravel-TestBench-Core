@@ -26,7 +26,7 @@ To get the latest version of Laravel TestBench Core, simply add the following li
 
 You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
 
-Once Laravel TestBench Core is installed, you can extend or implement the classes in this package, or packages required by this package. The AbstractTestCase class would be a good place to start. There are no service providers to register.
+Once Laravel TestBench Core is installed, you can extend or implement the classes in this package, or packages required by this package. There are no service providers to register.
 
 
 ## Configuration
