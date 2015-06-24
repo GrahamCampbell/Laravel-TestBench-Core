@@ -31,14 +31,19 @@ trait LaravelTrait
     {
         $injectable = true;
 
+        $message = "The class '$name' couldn't be automatically injected.";
+
         try {
             $class = $this->makeInjectableClass($name);
             $this->assertInstanceOf($name, $class->getInjectedObject());
         } catch (Exception $e) {
             $injectable = false;
+            if ($msg = $e->getMessage()) {
+                $message .= " $msg";
+            }
         }
 
-        $this->assertTrue($injectable, "The class '$name' couldn't be automatically injected.");
+        $this->assertTrue($injectable, $message);
     }
 
     /**
