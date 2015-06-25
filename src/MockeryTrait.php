@@ -29,10 +29,14 @@ trait MockeryTrait
      */
     public function tearDownMockery()
     {
-        if ($container = Mockery::getContainer()) {
-            $this->addToAssertionCount($container->mockery_getExpectationCount());
-        }
+        if (class_exists(Mockery::class, false)) {
+            $container = Mockery::getContainer();
 
-        Mockery::close();
+            if ($container) {
+                $this->addToAssertionCount($container->mockery_getExpectationCount());
+            }
+
+            Mockery::close();
+        }
     }
 }
