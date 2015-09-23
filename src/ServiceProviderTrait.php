@@ -11,6 +11,7 @@
 
 namespace GrahamCampbell\TestBenchCore;
 
+use Illuminate\Support\ServiceProvider;
 use ReflectionClass;
 
 /**
@@ -35,7 +36,7 @@ trait ServiceProviderTrait
 
         $reflection = new ReflectionClass($class);
 
-        $serviceprovider = new ReflectionClass('Illuminate\Support\ServiceProvider');
+        $serviceprovider = new ReflectionClass(ServiceProvider::class);
 
         $msg = "Expected class '$class' to be a service provider.";
 
