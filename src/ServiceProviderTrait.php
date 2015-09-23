@@ -36,11 +36,11 @@ trait ServiceProviderTrait
 
         $reflection = new ReflectionClass($class);
 
-        $serviceprovider = new ReflectionClass(ServiceProvider::class);
+        $provider = new ReflectionClass(ServiceProvider::class);
 
         $msg = "Expected class '$class' to be a service provider.";
 
-        $this->assertTrue($reflection->isSubclassOf($serviceprovider), $msg);
+        $this->assertTrue($reflection->isSubclassOf($provider), $msg);
     }
 
     public function testProvides()
