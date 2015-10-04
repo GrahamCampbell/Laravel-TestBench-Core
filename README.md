@@ -39,6 +39,11 @@ Laravel TestBench Core requires no configuration. Just follow the simple install
 You may see an example of implementation in pretty much all of my Laravel packages.
 
 
+## Security
+
+If you discover a security vulnerability within this package, please send an e-mail to Graham Campbell at graham@alt-three.com. All security vulnerabilities will be promptly addressed.
+
+
 ## License
 
 Laravel TestBench Core is licensed under [The MIT License (MIT)](LICENSE).
