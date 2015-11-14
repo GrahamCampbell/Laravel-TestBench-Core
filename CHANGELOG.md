@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V1.1 (Upcoming)
+## V1.1 (14/11/2015)
 
 * Updated version constraints
 
