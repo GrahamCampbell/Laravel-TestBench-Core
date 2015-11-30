@@ -36,7 +36,7 @@ trait FacadeTrait
     abstract protected function getFacadeClass();
 
     /**
-     * Get the facade route.
+     * Get the facade root.
      *
      * @return string
      */
