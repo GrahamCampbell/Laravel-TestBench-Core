@@ -6,6 +6,7 @@ Laravel TestBench Core was created by, and is maintained by [Graham Campbell](ht
 ![Laravel TestBench Core](https://cloud.githubusercontent.com/assets/2829600/8304779/03c6b9d0-19a1-11e5-95dd-2d07eaf24a3e.png)
 
 <p align="center">
+<a href="https://styleci.io/repos/37913000"><img src="https://styleci.io/repos/37913000/shield" alt="StyleCI Status"></img></a>
 <a href="https://travis-ci.org/GrahamCampbell/Laravel-TestBench-Core"><img src="https://img.shields.io/travis/GrahamCampbell/Laravel-TestBench-Core/master.svg?style=flat-square" alt="Build Status"></img></a>
 <a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-TestBench-Core/code-structure"><img src="https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Laravel-TestBench-Core.svg?style=flat-square" alt="Coverage Status"></img></a>
 <a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-TestBench-Core"><img src="https://img.shields.io/scrutinizer/g/GrahamCampbell/Laravel-TestBench-Core.svg?style=flat-square" alt="Quality Score"></img></a>
