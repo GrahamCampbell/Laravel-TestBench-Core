@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V1.1.1 (30/01/2016)
+
+* Fixed some typos
+
+
 ## V1.1 (14/11/2015)
 
 * Updated version constraints
