@@ -21,6 +21,8 @@ use ReflectionClass;
  */
 trait FacadeTrait
 {
+    use HelperTrait;
+
     /**
      * Get the facade accessor.
      *
