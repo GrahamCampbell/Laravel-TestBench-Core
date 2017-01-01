@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V1.1.2 (01/01/2017)
+
+* Load the helper trait if not loaded already
+
+
 ## V1.1.1 (30/01/2016)
 
 * Fixed some typos
