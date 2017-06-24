@@ -17,25 +17,13 @@ Laravel TestBench Core was created by, and is maintained by [Graham Campbell](ht
 
 ## Installation
 
-Either [PHP](https://php.net) 5.5+ or [HHVM](http://hhvm.com) 3.6+ are required.
-
-To get the latest version of Laravel TestBench Core, simply require the project using [Composer](https://getcomposer.org):
+Laravel TestBench Core requires [PHP](https://php.net) 5.5+. To get the latest version, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
 $ composer require graham-campbell/testbench-core --dev
 ```
 
-Instead, you may of course manually update your require-dev block and run `composer update` if you so choose:
-
-```json
-{
-    "require-dev": {
-        "graham-campbell/testbench-core": "^1.0"
-    }
-}
-```
-
-Once Laravel TestBench Core is installed, you can extend or implement the classes in this package, or packages required by this package. There are no service providers to register.
+Once installed, you can extend or implement the classes in this package, or packages required by this package. There are no service providers to register.
 
 
 ## Configuration
