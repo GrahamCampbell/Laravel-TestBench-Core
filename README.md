@@ -17,7 +17,7 @@ Laravel TestBench Core was created by, and is maintained by [Graham Campbell](ht
 
 ## Installation
 
-Laravel TestBench Core requires [PHP](https://php.net) 5.5+. To get the latest version, simply require the project using [Composer](https://getcomposer.org):
+Laravel TestBench Core requires [PHP](https://php.net) 7. To get the latest version, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
 $ composer require graham-campbell/testbench-core --dev
