@@ -102,7 +102,7 @@ trait FacadeTrait
 
             $msg = "Expected class '$provider' to provide '$accessor'.";
 
-            $this->assertInArray($accessor, $method->invoke(new $provider($this->app)), true, $msg);
+            $this->assertInArray($accessor, $method->invoke(new $provider($this->app)), $msg);
         }
     }
 }
