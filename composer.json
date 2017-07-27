@@ -23,7 +23,10 @@
     "autoload": {
         "psr-4": {
             "GrahamCampbell\\TestBenchCore\\": "src/"
-        }
+        },
+        "files": [
+            "src/bc.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
