@@ -29,7 +29,7 @@ class HelpersTest extends TestCase
     }
 
     /**
-     * @expectedException PHPUnit_Framework_ExpectationFailedException
+     * @expectedException PHPUnit\Framework\ExpectationFailedException
      */
     public function testNotInArray()
     {
@@ -42,7 +42,7 @@ class HelpersTest extends TestCase
     }
 
     /**
-     * @expectedException PHPUnit_Framework_ExpectationFailedException
+     * @expectedException PHPUnit\Framework\ExpectationFailedException
      */
     public function testMethodDoesNotExist()
     {
@@ -57,7 +57,7 @@ class HelpersTest extends TestCase
     }
 
     /**
-     * @expectedException PHPUnit_Framework_ExpectationFailedException
+     * @expectedException PHPUnit\Framework\ExpectationFailedException
      */
     public function testNotInJson()
     {
