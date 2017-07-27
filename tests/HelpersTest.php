@@ -12,7 +12,7 @@
 namespace GrahamCampbell\Tests\TestBenchCore;
 
 use GrahamCampbell\TestBenchCore\HelperTrait;
-use PHPUnit_Framework_TestCase as TestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * This is the helpers test class.
