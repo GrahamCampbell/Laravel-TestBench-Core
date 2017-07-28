@@ -14,6 +14,9 @@ declare(strict_types=1);
 namespace GrahamCampbell\Tests\TestBenchCore;
 
 use GrahamCampbell\Analyzer\AnalysisTrait;
+use Illuminate\Support\Facades\Facade;
+use Illuminate\Support\ServiceProvider;
+use Mockery;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -35,6 +38,18 @@ class AnalysisTest extends TestCase
         return [
             realpath(__DIR__.'/../src'),
             realpath(__DIR__),
+        ];
+    }
+
+    /**
+     * Get the classes to ignore not existing.
+     *
+     * @return string[]
+     */
+    protected function getIgnored()
+    {
+        return [
+            Facade::class, Mockery::class, ServiceProvider::class,
         ];
     }
 }
