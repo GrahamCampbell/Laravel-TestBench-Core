@@ -27,7 +27,7 @@ trait LaravelTrait
      *
      * @return void
      */
-    public function assertIsInjectable($name)
+    public function assertIsInjectable(string $name)
     {
         $injectable = true;
 
@@ -53,7 +53,7 @@ trait LaravelTrait
      *
      * @return object
      */
-    protected function makeInjectableClass($name)
+    protected function makeInjectableClass(string $name)
     {
         do {
             $class = 'testBenchStub'.str_random();
