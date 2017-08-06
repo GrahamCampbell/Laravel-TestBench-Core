@@ -2,6 +2,13 @@ CHANGE LOG
 ==========
 
 
+## V2.0 (06/08/2017)
+
+* Supports PHP 7.0, 7.1, 7.2
+* Supports PHPUnit 6
+* Added some type hints
+
+
 ## V1.1.2 (01/01/2017)
 
 * Load the helper trait if not loaded already
