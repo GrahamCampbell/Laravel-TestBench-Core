@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V3.0 (02/01/2017)
+
+* Removed BC layer
+
+
 ## V2.0 (06/08/2017)
 
 * Supports PHP 7.0, 7.1, 7.2
