@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace GrahamCampbell\TestBenchCore;
 
 use Illuminate\Support\ServiceProvider;
+use PHPUnit\Framework\Assert;
 use ReflectionClass;
 
 /**
@@ -55,6 +56,10 @@ trait ServiceProviderTrait
 
         $msg = "Expected class '$class' to provide a valid list of services.";
 
-        $this->assertInternalType('array', $method->invoke(new $class($this->app)), $msg);
+        if (is_callable([Assert::class, 'assertIsArray'])) {
+            $this->assertIsArray($method->invoke(new $class($this->app)), $msg);
+        } else {
+            $this->assertInternalType('array', $method->invoke(new $class($this->app)), $msg);
+        }
     }
 }
