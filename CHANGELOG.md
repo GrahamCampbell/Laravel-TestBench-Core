@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V3.0.1 (16/02/2019)
+
+* Fixes for PHPUnit 8
+
+
 ## V3.0 (02/01/2018)
 
 * Removed BC layer
