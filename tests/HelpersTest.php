@@ -14,6 +14,8 @@ declare(strict_types=1);
 namespace GrahamCampbell\Tests\TestBenchCore;
 
 use GrahamCampbell\TestBenchCore\HelperTrait;
+use InvalidArgumentException;
+use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -30,11 +32,9 @@ class HelpersTest extends TestCase
         $this->assertInArray('foo', ['foo']);
     }
 
-    /**
-     * @expectedException PHPUnit\Framework\ExpectationFailedException
-     */
     public function testNotInArray()
     {
+        $this->expectException(ExpectationFailedException::class);
         $this->assertInArray('foo', ['bar']);
     }
 
@@ -43,11 +43,9 @@ class HelpersTest extends TestCase
         $this->assertMethodExists('getBar', FooStub::class);
     }
 
-    /**
-     * @expectedException PHPUnit\Framework\ExpectationFailedException
-     */
     public function testMethodDoesNotExist()
     {
+        $this->expectException(ExpectationFailedException::class);
         $this->assertMethodExists('getFoo', FooStub::class);
     }
 
@@ -58,20 +56,21 @@ class HelpersTest extends TestCase
         $this->assertInJson('{ "foo": "bar", "bar": "baz" }', ['bar' => 'baz']);
     }
 
-    /**
-     * @expectedException PHPUnit\Framework\ExpectationFailedException
-     */
-    public function testNotInJson()
+    public function testNotInJsonOne()
     {
+        $this->expectException(ExpectationFailedException::class);
         $this->assertInJson('{"foo":"baz"}', ['foo' => 'bar']);
+    }
+
+    public function testNotInJsonTwo()
+    {
+        $this->expectException(ExpectationFailedException::class);
         $this->assertInJson('{ "foo": "bar", "bar": "baz" }', ['foo' => 'baz']);
     }
 
-    /**
-     * @expectedException InvalidArgumentException
-     */
     public function testBadJsonInNotInJson()
     {
+        $this->expectException(InvalidArgumentException::class);
         $this->assertInJson('foobar', ['foo' => 'bar']);
     }
 }
