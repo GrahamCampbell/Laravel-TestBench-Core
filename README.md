@@ -1,7 +1,7 @@
 Laravel TestBench Core
 ======================
 
-Laravel TestBench Core was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and provides some testing functionality for [Laravel 5](http://laravel.com). Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-TestBench-Core/releases), [license](LICENSE), and [contribution guidelines](CONTRIBUTING.md).
+Laravel TestBench Core was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and provides some testing functionality for [Laravel 5](http://laravel.com). Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-TestBench-Core/releases), [security policy](https://github.com/GrahamCampbell/Laravel-TestBench-Core/security/policy), [license](LICENSE), [code of conduct](.github/CODE_OF_CONDUCT.md), and [contribution guidelines](.github/CONTRIBUTING.md).
 
 ![Laravel TestBench Core](https://cloud.githubusercontent.com/assets/2829600/8304779/03c6b9d0-19a1-11e5-95dd-2d07eaf24a3e.png)
 
@@ -40,7 +40,7 @@ You may see an example of implementation in pretty much all of my Laravel packag
 
 ## Security
 
-If you discover a security vulnerability within this package, please send an e-mail to Graham Campbell at graham@alt-three.com. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this package, please send an email to Graham Campbell at graham@alt-three.com. All security vulnerabilities will be promptly addressed. You may view our full security policy [here](https://github.com/GrahamCampbell/Laravel-TestBench-Core/security/policy).
 
 
 ## License
