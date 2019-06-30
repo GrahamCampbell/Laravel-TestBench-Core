@@ -16,7 +16,8 @@ namespace GrahamCampbell\Tests\TestBenchCore;
 use GrahamCampbell\Analyzer\AnalysisTrait;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\Facade;
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\ServiceProvide;
+use Illuminate\Support\Str;
 use Mockery;
 use PHPUnit\Framework\TestCase;
 
@@ -50,7 +51,11 @@ class AnalysisTest extends TestCase
     protected function getIgnored()
     {
         return [
-            Application::class, Facade::class, Mockery::class, ServiceProvider::class,
+            Application::class,
+            Facade::class,
+            Mockery::class,
+            ServiceProvider::class,
+            Str::class,
         ];
     }
 }
