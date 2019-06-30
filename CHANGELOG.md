@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V3.0.3 (Upcoming)
+
+* Avoided deprecated code
+
+
 ## V3.0.2 (16/02/2019)
 
 *  Fixed assertInternalType usage
