@@ -16,7 +16,7 @@ namespace GrahamCampbell\Tests\TestBenchCore;
 use GrahamCampbell\Analyzer\AnalysisTrait;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\Facade;
-use Illuminate\Support\ServiceProvide;
+use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Mockery;
 use PHPUnit\Framework\TestCase;
