@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace GrahamCampbell\TestBenchCore;
 
 use Exception;
+use Illuminate\Support\Str;
 
 /**
  * This is the laravel trait.
@@ -58,7 +59,7 @@ trait LaravelTrait
     protected function makeInjectableClass(string $name)
     {
         do {
-            $class = 'testBenchStub'.str_random();
+            $class = 'testBenchStub'.Str::random();
         } while (class_exists($class));
 
         eval("
