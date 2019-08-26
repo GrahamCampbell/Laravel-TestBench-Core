@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V3.0.5 (26/08/2019)
+
+* Clarified compat with Laravel 6
+
+
 ## V3.0.4 (23/08/2019)
 
 * Support PHP 7.0 - 7.4 only
