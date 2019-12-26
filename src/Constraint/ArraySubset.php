@@ -14,7 +14,6 @@ declare(strict_types=1);
 namespace GrahamCampbell\TestBenchCore\Constraint;
 
 use ArrayObject;
-use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\Constraint\Constraint;
 use PHPUnit\Runner\Version;
 use SebastianBergmann\Comparator\ComparisonFailure;
@@ -114,7 +113,7 @@ if ((int) Version::series()[0] >= 9) {
          */
         public function toString(): string
         {
-            return 'has the subset ' . $this->exporter()->export($this->subset);
+            return 'has the subset '.$this->exporter()->export($this->subset);
         }
 
         /**
@@ -131,7 +130,7 @@ if ((int) Version::series()[0] >= 9) {
          */
         protected function failureDescription($other): string
         {
-            return 'an array ' . $this->toString();
+            return 'an array '.$this->toString();
         }
 
         /**
@@ -162,7 +161,7 @@ if ((int) Version::series()[0] >= 9) {
             return (array) $other;
         }
     }
-} else if ((int) Version::series()[0] >= 8) {
+} elseif ((int) Version::series()[0] >= 8) {
     /**
      * Constraint that asserts that the array it is evaluated for has a specified subset.
      *
@@ -254,7 +253,7 @@ if ((int) Version::series()[0] >= 9) {
          */
         public function toString(): string
         {
-            return 'has the subset ' . $this->exporter()->export($this->subset);
+            return 'has the subset '.$this->exporter()->export($this->subset);
         }
 
         /**
@@ -271,7 +270,7 @@ if ((int) Version::series()[0] >= 9) {
          */
         protected function failureDescription($other): string
         {
-            return 'an array ' . $this->toString();
+            return 'an array '.$this->toString();
         }
 
         /**
@@ -303,4 +302,3 @@ if ((int) Version::series()[0] >= 9) {
         }
     }
 }
-

@@ -94,10 +94,10 @@ trait HelperTrait
     /**
      * Asserts that an array has a specified subset.
      *
-     * @param  \ArrayAccess|array $subset
-     * @param  \ArrayAccess|array $array
-     * @param  bool               $checkForIdentity
-     * @param  string             $msg
+     * @param \ArrayAccess|array $subset
+     * @param \ArrayAccess|array $array
+     * @param bool               $checkForIdentity
+     * @param string             $msg
      *
      * @throws \InvalidArgumentException
      *

@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace GrahamCampbell\Tests\TestBenchCore;
 
-use GrahamCampbell\TestBenchCore\HelperTrait;
 use Exception;
+use GrahamCampbell\TestBenchCore\HelperTrait;
 use InvalidArgumentException;
 use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\TestCase;
