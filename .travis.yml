@@ -2,24 +2,58 @@ dist: bionic
 
 matrix:
   include:
-    - name: PHP 7.0
+    - name: PHP 7.0; PHPUnit 6
       env:
         - PHP_VERSION=7.0
-    - name: PHP 7.1
+        - PHPUNIT_VERSION=^6.5
+    - name: PHP 7.1; PHPUnit 6
       env:
         - PHP_VERSION=7.1
-    - name: PHP 7.2
+        - PHPUNIT_VERSION=^6.5
+    - name: PHP 7.1; PHPUnit 7
+      env:
+        - PHP_VERSION=7.1
+        - PHPUNIT_VERSION=^7.5
+    - name: PHP 7.2; PHPUnit 6
       env:
         - PHP_VERSION=7.2
-    - name: PHP 7.3
+        - PHPUNIT_VERSION=^6.5
+    - name: PHP 7.2; PHPUnit 7
+      env:
+        - PHP_VERSION=7.2
+        - PHPUNIT_VERSION=^7.5
+    - name: PHP 7.2; PHPUnit 8
+      env:
+        - PHP_VERSION=7.2
+        - PHPUNIT_VERSION=^8.5
+    - name: PHP 7.3; PHPUnit 6
       env:
         - PHP_VERSION=7.3
-    - name: PHP 7.4
+        - PHPUNIT_VERSION=^6.5
+    - name: PHP 7.3; PHPUnit 7
+      env:
+        - PHP_VERSION=7.3
+        - PHPUNIT_VERSION=^7.5
+    - name: PHP 7.3; PHPUnit 8
+      env:
+        - PHP_VERSION=7.3
+        - PHPUNIT_VERSION=^8.5
+    - name: PHP 7.4; PHPUnit 6
       env:
         - PHP_VERSION=7.4
+        - PHPUNIT_VERSION=^6.5
+    - name: PHP 7.4; PHPUnit 7
+      env:
+        - PHP_VERSION=7.4
+        - PHPUNIT_VERSION=^7.5
+    - name: PHP 7.4; PHPUnit 8
+      env:
+        - PHP_VERSION=7.4
+        - PHPUNIT_VERSION=^8.5
 
 before_install:
   - travis_retry docker pull registry.gitlab.com/grahamcampbell/php:$PHP_VERSION
+  - docker run -it -w /data -v ${PWD}:/data:delegated --entrypoint composer registry.gitlab.com/grahamcampbell/php:$PHP_VERSION require "phpunit/phpunit:${PHPUNIT_VERSION}" --dev --no-update -n
 
 install:
   - travis_retry docker run -it -w /data -v ${PWD}:/data:delegated --entrypoint composer registry.gitlab.com/grahamcampbell/php:$PHP_VERSION install --no-suggest --prefer-dist -n -o
