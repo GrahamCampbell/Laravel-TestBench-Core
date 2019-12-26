@@ -20,31 +20,7 @@ use PHPUnit\Framework\InvalidArgumentException;
 use PHPUnit\Runner\Version;
 use PHPUnit\Util\InvalidArgumentHelper;
 
-if ((int) Version::series()[0] < 7) {
-    /**
-     * This is the array subset trait.
-     *
-     * @author Sebastian Bergmann <sebastian@phpunit.de>
-     * @author Graham Campbell <graham@alt-three.com>
-     */
-    trait ArraySubsetTrait
-    {
-        /**
-         * Asserts that an array has a specified subset.
-         *
-         * @param array|ArrayAccess $subset
-         * @param array|ArrayAccess $array
-         * @param bool              $strict
-         * @param string            $message
-         *
-         * @return void
-         */
-        public static function assertArraySubset($subset, $array, $strict = false, $message = '')
-        {
-            return Assert::assertArraySubset($subset, $array, $strict, $message);
-        }
-    }
-} else {
+if ((int) Version::series()[0] >= 8) {
     /**
      * This is the array subset trait.
      *
@@ -84,6 +60,54 @@ if ((int) Version::series()[0] < 7) {
             $constraint = new ArraySubset($subset, $checkForIdentity);
 
             static::assertThat($array, $constraint, $msg);
+        }
+    }
+} elseif ((int) Version::series()[0] >= 7) {
+    /**
+     * This is the array subset trait.
+     *
+     * @author Sebastian Bergmann <sebastian@phpunit.de>
+     * @author Graham Campbell <graham@alt-three.com>
+     */
+    trait ArraySubsetTrait
+    {
+        /**
+         * Asserts that an array has a specified subset.
+         *
+         * @param \ArrayAccess|array $subset
+         * @param \ArrayAccess|array $array
+         * @param bool               $checkForIdentity
+         * @param string             $msg
+         *
+         * @return void
+         */
+        public static function assertArraySubset($subset, $array, bool $checkForIdentity = false, string $msg = ''): void
+        {
+            Assert::assertArraySubset($subset, $array, $checkForIdentity, $msg);
+        }
+    }
+} else {
+    /**
+     * This is the array subset trait.
+     *
+     * @author Sebastian Bergmann <sebastian@phpunit.de>
+     * @author Graham Campbell <graham@alt-three.com>
+     */
+    trait ArraySubsetTrait
+    {
+        /**
+         * Asserts that an array has a specified subset.
+         *
+         * @param array|ArrayAccess $subset
+         * @param array|ArrayAccess $array
+         * @param bool              $strict
+         * @param string            $msg
+         *
+         * @return void
+         */
+        public static function assertArraySubset($subset, $array, $strict = false, $msg = '')
+        {
+            Assert::assertArraySubset($subset, $array, $strict, $msg);
         }
     }
 }
