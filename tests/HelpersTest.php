@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace GrahamCampbell\Tests\TestBenchCore;
 
 use GrahamCampbell\TestBenchCore\HelperTrait;
+use Exception;
 use InvalidArgumentException;
 use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\TestCase;
@@ -72,6 +73,40 @@ class HelpersTest extends TestCase
     {
         $this->expectException(InvalidArgumentException::class);
         $this->assertInJson('foobar', ['foo' => 'bar']);
+    }
+
+    public function testAssertArraySubsetBadArg1()
+    {
+        try {
+            $this->assertArraySubset(123, []);
+        } catch (Exception $e) {
+            $this->assertInArray($e->getMessage(), [
+                'Argument #1 of GrahamCampbell\Tests\TestBenchCore\HelpersTest::assertArraySubset() must be an array or ArrayAccess',
+                'Argument #1 (No Value) of GrahamCampbell\Tests\TestBenchCore\HelpersTest::assertArraySubset() must be a array or ArrayAccess',
+                'Argument #1 (No Value) of PHPUnit\Framework\Assert::assertArraySubset() must be a array or ArrayAccess',
+            ]);
+
+            return;
+        }
+
+        $this->assertTrue(false);
+    }
+
+    public function testAssertArraySubsetBadArg2()
+    {
+        try {
+            $this->assertArraySubset([], 123);
+        } catch (Exception $e) {
+            $this->assertInArray($e->getMessage(), [
+                'Argument #2 of GrahamCampbell\Tests\TestBenchCore\HelpersTest::assertArraySubset() must be an array or ArrayAccess',
+                'Argument #2 (No Value) of GrahamCampbell\Tests\TestBenchCore\HelpersTest::assertArraySubset() must be a array or ArrayAccess',
+                'Argument #2 (No Value) of PHPUnit\Framework\Assert::assertArraySubset() must be a array or ArrayAccess',
+            ]);
+
+            return;
+        }
+
+        $this->assertTrue(false);
     }
 }
 

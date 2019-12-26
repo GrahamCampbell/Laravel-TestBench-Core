@@ -115,7 +115,7 @@ trait HelperTrait
             if (class_exists(PHPUnitInvalidArgumentException::class)) {
                 throw PHPUnitInvalidArgumentException::create(1, 'array or ArrayAccess');
             } else {
-                throw InvalidArgumentException::create(1, 'array or ArrayAccess');
+                throw InvalidArgumentHelper::factory(1, 'array or ArrayAccess');
             }
         }
 
@@ -123,7 +123,7 @@ trait HelperTrait
             if (class_exists(PHPUnitInvalidArgumentException::class)) {
                 throw PHPUnitInvalidArgumentException::create(2, 'array or ArrayAccess');
             } else {
-                throw InvalidArgumentException::create(2, 'array or ArrayAccess');
+                throw InvalidArgumentHelper::factory(2, 'array or ArrayAccess');
             }
         }
 
