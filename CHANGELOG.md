@@ -2,6 +2,12 @@ CHANGE LOG
 ==========
 
 
+## V3.1 (26/12/2019)
+
+* Add assertArraySubset
+* Support PHPUnit 9 too
+
+
 ## V3.0.5 (26/08/2019)
 
 * Clarified compat with Laravel 6
