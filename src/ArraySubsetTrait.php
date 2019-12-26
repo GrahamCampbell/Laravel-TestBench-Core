@@ -20,7 +20,6 @@ use PHPUnit\Framework\InvalidArgumentException;
 use PHPUnit\Runner\Version;
 use PHPUnit\Util\InvalidArgumentHelper;
 
-
 if ((int) Version::series()[0] < 7) {
     /**
      * This is the array subset trait.
