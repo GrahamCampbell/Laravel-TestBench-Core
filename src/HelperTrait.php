@@ -23,6 +23,8 @@ use InvalidArgumentException;
  */
 trait HelperTrait
 {
+    use ArraySubsetTrait;
+
     /**
      * Assert that the element exists in the array.
      *
