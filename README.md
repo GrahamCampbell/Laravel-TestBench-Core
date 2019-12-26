@@ -17,7 +17,7 @@ Laravel TestBench Core was created by, and is maintained by [Graham Campbell](ht
 
 ## Installation
 
-Laravel TestBench Core requires [PHP](https://php.net) 7.0-7.4, and supports [PHPUnit](https://phpunit.de/) 6-9 and Laravel 5.1-5.8 and 6.
+Laravel TestBench Core requires [PHP](https://php.net) 7.0-7.4, and supports [PHPUnit](https://phpunit.de/) 6-9 and Laravel 5.1-7.
 
 To get the latest version, simply require the project using [Composer](https://getcomposer.org):
 
