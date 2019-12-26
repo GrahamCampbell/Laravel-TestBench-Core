@@ -14,5 +14,5 @@ declare(strict_types=1);
 namespace GrahamCampbell\TestBenchCore\Constraint;
 
 if (PHP_VERSION_ID >= 70100) {
-    require_once __DIR__.DIRECTORY_SEPARATOR.'ArraySubset.internal.php';
+    require_once __DIR__.DIRECTORY_SEPARATOR.'ArraySubset.internal';
 }
