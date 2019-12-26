@@ -17,7 +17,6 @@ use GrahamCampbell\TestBenchCore\HelperTrait;
 use InvalidArgumentException;
 use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\TestCase;
-use PHPUnit\Runner\Version;
 
 /**
  * This is the helpers test class.
@@ -52,10 +51,6 @@ class HelpersTest extends TestCase
 
     public function testInJson()
     {
-        if ((int) Version::series()[0] > 7) {
-            $this->markTestSkipped('assertArraySubset() deprecated or not available.');
-        }
-
         $this->assertInJson('{"foo":"bar"}', ['foo' => 'bar']);
         $this->assertInJson('{ "foo": "bar", "bar": "baz" }', ['foo' => 'bar']);
         $this->assertInJson('{ "foo": "bar", "bar": "baz" }', ['bar' => 'baz']);
@@ -63,20 +58,12 @@ class HelpersTest extends TestCase
 
     public function testNotInJsonOne()
     {
-        if ((int) Version::series()[0] > 7) {
-            $this->markTestSkipped('assertArraySubset() deprecated or not available.');
-        }
-
         $this->expectException(ExpectationFailedException::class);
         $this->assertInJson('{"foo":"baz"}', ['foo' => 'bar']);
     }
 
     public function testNotInJsonTwo()
     {
-        if ((int) Version::series()[0] > 7) {
-            $this->markTestSkipped('assertArraySubset() deprecated or not available.');
-        }
-
         $this->expectException(ExpectationFailedException::class);
         $this->assertInJson('{ "foo": "bar", "bar": "baz" }', ['foo' => 'baz']);
     }

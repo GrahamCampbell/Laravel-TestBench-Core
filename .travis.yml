@@ -2,54 +2,74 @@ dist: bionic
 
 matrix:
   include:
-    - name: PHP 7.0; PHPUnit 6
+    - name: PHP 7.0; PHPUnit 6.5
       env:
         - PHP_VERSION=7.0
-        - PHPUNIT_VERSION=^6.5
-    - name: PHP 7.1; PHPUnit 6
+        - PHPUNIT_VERSION=6.5.*
+    - name: PHP 7.1; PHPUnit 6.5
       env:
         - PHP_VERSION=7.1
-        - PHPUNIT_VERSION=^6.5
-    - name: PHP 7.1; PHPUnit 7
+        - PHPUNIT_VERSION=6.5.*
+    - name: PHP 7.1; PHPUnit 7.5
       env:
         - PHP_VERSION=7.1
-        - PHPUNIT_VERSION=^7.5
-    - name: PHP 7.2; PHPUnit 6
+        - PHPUNIT_VERSION=7.5.*
+    - name: PHP 7.2; PHPUnit 6.5
       env:
         - PHP_VERSION=7.2
-        - PHPUNIT_VERSION=^6.5
-    - name: PHP 7.2; PHPUnit 7
+        - PHPUNIT_VERSION=6.5.*
+    - name: PHP 7.2; PHPUnit 7.5
       env:
         - PHP_VERSION=7.2
-        - PHPUNIT_VERSION=^7.5
-    - name: PHP 7.2; PHPUnit 8
+        - PHPUNIT_VERSION=7.5.*
+    - name: PHP 7.2; PHPUnit 8.0
       env:
         - PHP_VERSION=7.2
-        - PHPUNIT_VERSION=^8.5
-    - name: PHP 7.3; PHPUnit 6
+        - PHPUNIT_VERSION=8.0.*
+    - name: PHP 7.2; PHPUnit 8.5
+      env:
+        - PHP_VERSION=7.2
+        - PHPUNIT_VERSION=8.5.*
+    - name: PHP 7.3; PHPUnit 6.5
       env:
         - PHP_VERSION=7.3
-        - PHPUNIT_VERSION=^6.5
-    - name: PHP 7.3; PHPUnit 7
+        - PHPUNIT_VERSION=6.5.*
+    - name: PHP 7.3; PHPUnit 7.5
       env:
         - PHP_VERSION=7.3
-        - PHPUNIT_VERSION=^7.5
-    - name: PHP 7.3; PHPUnit 8
+        - PHPUNIT_VERSION=7.5.*
+    - name: PHP 7.3; PHPUnit 0.5
       env:
         - PHP_VERSION=7.3
-        - PHPUNIT_VERSION=^8.5
-    - name: PHP 7.4; PHPUnit 6
+        - PHPUNIT_VERSION=8.0.*
+    - name: PHP 7.3; PHPUnit 8.5
+      env:
+        - PHP_VERSION=7.3
+        - PHPUNIT_VERSION=8.5.*
+    - name: PHP 7.3; PHPUnit 9.0
+      env:
+        - PHP_VERSION=7.3
+        - PHPUNIT_VERSION=9.0.*
+    - name: PHP 7.4; PHPUnit 6.5
       env:
         - PHP_VERSION=7.4
-        - PHPUNIT_VERSION=^6.5
-    - name: PHP 7.4; PHPUnit 7
+        - PHPUNIT_VERSION=6.5.*
+    - name: PHP 7.4; PHPUnit 7.5
       env:
         - PHP_VERSION=7.4
-        - PHPUNIT_VERSION=^7.5
-    - name: PHP 7.4; PHPUnit 8
+        - PHPUNIT_VERSION=7.5.*
+    - name: PHP 7.4; PHPUnit 8.0
       env:
         - PHP_VERSION=7.4
-        - PHPUNIT_VERSION=^8.5
+        - PHPUNIT_VERSION=8.0.*
+    - name: PHP 7.4; PHPUnit 8.5
+      env:
+        - PHP_VERSION=7.4
+        - PHPUNIT_VERSION=8.5.*
+    - name: PHP 7.4; PHPUnit 9.0
+      env:
+        - PHP_VERSION=7.4
+        - PHPUNIT_VERSION=9.0.*
 
 before_install:
   - travis_retry docker pull registry.gitlab.com/grahamcampbell/php:$PHP_VERSION

@@ -14,12 +14,15 @@ declare(strict_types=1);
 namespace GrahamCampbell\Tests\TestBenchCore;
 
 use GrahamCampbell\Analyzer\AnalysisTrait;
+use GrahamCampbell\TestBenchCore\Constraint\ArraySubset;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Mockery;
+use PHPUnit\Framework\InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Util\InvalidArgumentHelper;
 
 /**
  * This is the analysis test class.
@@ -52,7 +55,10 @@ class AnalysisTest extends TestCase
     {
         return [
             Application::class,
+            ArraySubset::class,
             Facade::class,
+            InvalidArgumentException::class,
+            InvalidArgumentHelper::class,
             Mockery::class,
             ServiceProvider::class,
             Str::class,

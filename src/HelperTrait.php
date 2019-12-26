@@ -13,7 +13,13 @@ declare(strict_types=1);
 
 namespace GrahamCampbell\TestBenchCore;
 
+use ArrayAccess;
+use GrahamCampbell\TestBenchCore\Constraint\ArraySubset;
 use InvalidArgumentException;
+use PHPUnit\Framework\Assert;
+use PHPUnit\Framework\InvalidArgumentException as PHPUnitInvalidArgumentException;
+use PHPUnit\Runner\Version;
+use PHPUnit\Util\InvalidArgumentHelper;
 
 /**
  * This is the helper trait.
@@ -83,5 +89,46 @@ trait HelperTrait
         }
 
         static::assertArraySubset($haystack, $array, false, $msg);
+    }
+
+    /**
+     * Asserts that an array has a specified subset.
+     *
+     * @param  \ArrayAccess|array $subset
+     * @param  \ArrayAccess|array $array
+     * @param  bool               $checkForIdentity
+     * @param  string             $msg
+     *
+     * @throws \InvalidArgumentException
+     *
+     * @return void
+     */
+    public static function assertArraySubset($subset, $array, bool $checkForIdentity = false, string $msg = ''): void
+    {
+        if ((int) Version::series()[0] < 8) {
+            Assert::assertArraySubset($subset, $array, $checkForIdentity, $msg);
+
+            return;
+        }
+
+        if (!(is_array($subset) || $subset instanceof ArrayAccess)) {
+            if (class_exists(PHPUnitInvalidArgumentException::class)) {
+                throw PHPUnitInvalidArgumentException::create(1, 'array or ArrayAccess');
+            } else {
+                throw InvalidArgumentException::create(1, 'array or ArrayAccess');
+            }
+        }
+
+        if (!(is_array($array) || $array instanceof ArrayAccess)) {
+            if (class_exists(PHPUnitInvalidArgumentException::class)) {
+                throw PHPUnitInvalidArgumentException::create(2, 'array or ArrayAccess');
+            } else {
+                throw InvalidArgumentException::create(2, 'array or ArrayAccess');
+            }
+        }
+
+        $constraint = new ArraySubset($subset, $checkForIdentity);
+
+        static::assertThat($array, $constraint, $msg);
     }
 }
