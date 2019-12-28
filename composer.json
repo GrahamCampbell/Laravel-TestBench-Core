@@ -1,6 +1,6 @@
 {
     "name": "graham-campbell/testbench-core",
-    "description": "TestBench Core Provides Some Testing Functionality For Laravel 5",
+    "description": "TestBench Core Provides Some Testing Functionality For Laravel",
     "keywords": ["laravel", "framework", "testing", "testbench-core", "TestBench", "Laravel TestBench Core", "Laravel-TestBench-Core", "Graham Campbell", "GrahamCampbell"],
     "license": "MIT",
     "authors": [
