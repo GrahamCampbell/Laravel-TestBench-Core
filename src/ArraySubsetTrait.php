@@ -20,7 +20,7 @@ use PHPUnit\Framework\InvalidArgumentException;
 use PHPUnit\Runner\Version;
 use PHPUnit\Util\InvalidArgumentHelper;
 
-if ((int) Version::series()[0] >= 8) {
+if (class_exists(Version::class) && (int) Version::series()[0] >= 8) {
     /**
      * This is the array subset trait.
      *
@@ -62,7 +62,7 @@ if ((int) Version::series()[0] >= 8) {
             static::assertThat($array, $constraint, $msg);
         }
     }
-} elseif ((int) Version::series()[0] >= 7) {
+} elseif (class_exists(Version::class) && (int) Version::series()[0] >= 7) {
     /**
      * This is the array subset trait.
      *

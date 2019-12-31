@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V3.1.1 (21/12/2019)
+
+* Don't crash if PHPUnit is not loaded
+
+
 ## V3.1 (26/12/2019)
 
 * Add assertArraySubset
