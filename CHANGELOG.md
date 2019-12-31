@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V3.1.1 (21/12/2019)
+## V3.1.1 (31/12/2019)
 
 * Don't crash if PHPUnit is not loaded
 
