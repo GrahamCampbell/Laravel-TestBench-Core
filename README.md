@@ -17,7 +17,19 @@ Laravel TestBench Core was created by, and is maintained by [Graham Campbell](ht
 
 ## Installation
 
-Laravel TestBench Core requires [PHP](https://php.net) 7.0-7.4, and supports [PHPUnit](https://phpunit.de/) 6-9 and Laravel 5.1-7.
+Laravel TestBench Core requires [PHP](https://php.net) 7.0-7.4, and supports [PHPUnit](https://phpunit.de/) 6-9 and Laravel 5.5-7.
+
+| TestBench Core | L5.1               | L5.2               | L5.3               | L5.4               | L5.5               | L5.6               | L5.7               | L5.8               | L6                 | L7                 |
+|----------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
+| 1.1            | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
+| 2.0            | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                |
+| 3.1            | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+
+| TestBench Core | PHPUnit 4.8        | PHPUnit 5          | PHPUnit 6          | PHPUnit 7          | PHPUnit 8          | PHPUnit 9          |
+|----------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
+| 1.1            | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                |
+| 2.0            | :x:                | :x:                | :white_check_mark: | :x:                | :x:                | :x:                |
+| 3.1            | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 
 To get the latest version, simply require the project using [Composer](https://getcomposer.org):
 
