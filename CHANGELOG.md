@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V3.1.2 (01/03/2020)
+
+* Miscellaneous tweaks
+
+
 ## V3.1.1 (31/12/2019)
 
 * Don't crash if PHPUnit is not loaded
