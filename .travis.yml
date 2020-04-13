@@ -46,10 +46,10 @@ matrix:
       env:
         - PHP_VERSION=7.3
         - PHPUNIT_VERSION=8.5.*
-    - name: PHP 7.3; PHPUnit 9.0
+    - name: PHP 7.3; PHPUnit 9.1
       env:
         - PHP_VERSION=7.3
-        - PHPUNIT_VERSION=9.0.*
+        - PHPUNIT_VERSION=9.1.*
     - name: PHP 7.4; PHPUnit 6.5
       env:
         - PHP_VERSION=7.4
@@ -66,17 +66,17 @@ matrix:
       env:
         - PHP_VERSION=7.4
         - PHPUNIT_VERSION=8.5.*
-    - name: PHP 7.4; PHPUnit 9.0
+    - name: PHP 7.4; PHPUnit 9.1
       env:
         - PHP_VERSION=7.4
-        - PHPUNIT_VERSION=9.0.*
+        - PHPUNIT_VERSION=9.1.*
 
 before_install:
   - travis_retry docker pull registry.gitlab.com/grahamcampbell/php:$PHP_VERSION
   - docker run -it -w /data -v ${PWD}:/data:delegated --entrypoint composer registry.gitlab.com/grahamcampbell/php:$PHP_VERSION require "phpunit/phpunit:${PHPUNIT_VERSION}" --dev --no-update -n
 
 install:
-  - travis_retry docker run -it -w /data -v ${PWD}:/data:delegated --entrypoint composer registry.gitlab.com/grahamcampbell/php:$PHP_VERSION install --no-suggest --prefer-dist -n -o
+  - travis_retry docker run -it -w /data -v ${PWD}:/data:delegated --entrypoint composer registry.gitlab.com/grahamcampbell/php:$PHP_VERSION install --prefer-dist -n -o
 
 script:
   - docker run -it -w /data -v ${PWD}:/data:delegated --entrypoint vendor/bin/phpunit registry.gitlab.com/grahamcampbell/php:$PHP_VERSION --coverage-clover build/logs/clover.xml
