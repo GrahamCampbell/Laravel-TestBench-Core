@@ -6,11 +6,11 @@ Laravel TestBench Core was created by, and is maintained by [Graham Campbell](ht
 ![Banner](https://user-images.githubusercontent.com/2829600/71477508-68a5a600-27e2-11ea-91c9-da343f90b279.png)
 
 <p align="center">
-<a href="https://github.com/GrahamCampbell/TestBench-Core/actions?query=workflow%3ATests"><img src="https://img.shields.io/github/workflow/status/GrahamCampbell/TestBench-Core/Tests?label=Tests&style=flat-square" alt="Build Status"></img></a>
+<a href="https://github.com/GrahamCampbell/Laravel-TestBench-Core/actions?query=workflow%3ATests"><img src="https://img.shields.io/github/workflow/status/GrahamCampbell/Laravel-TestBench-Core/Tests?label=Tests&style=flat-square" alt="Build Status"></img></a>
 <a href="https://github.styleci.io/repos/37913000"><img src="https://github.styleci.io/repos/37913000/shield" alt="StyleCI Status"></img></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square" alt="Software License"></img></a>
 <a href="https://packagist.org/packages/graham-campbell/testbench-core"><img src="https://img.shields.io/packagist/dt/graham-campbell/testbench-core?style=flat-square" alt="Packagist Downloads"></img></a>
-<a href="https://github.com/GrahamCampbell/TestBench-Core/releases"><img src="https://img.shields.io/github/release/GrahamCampbell/TestBench-Core?style=flat-square" alt="Latest Version"></img></a>
+<a href="https://github.com/GrahamCampbell/Laravel-TestBench-Core/releases"><img src="https://img.shields.io/github/release/GrahamCampbell/Laravel-TestBench-Core?style=flat-square" alt="Latest Version"></img></a>
 </p>
 
 
