@@ -3,53 +3,83 @@ name: Tests
 on:
   push:
   pull_request:
-  schedule:
-    - cron: '0 4 * * 1'
 
 jobs:
-  test:
-
-    runs-on: ubuntu-latest
+  tests:
+    name: PHP ${{ matrix.php }}; PHPUnit ${{ matrix.phpunit }}
+    runs-on: ubuntu-20.04
 
     strategy:
       matrix:
-        php: ["7.0", "7.1", "7.2", "7.3", "7.4"]
-        phpunit: ["6.5", "7.5", "8.0", "8.5", "9.0", "9.1"]
+        php: ['7.0', '7.1', '7.2', '7.3', '7.4', '8.0']
+        phpunit: ['6.5', '7.5', '8.0', '8.5', '9.0', '9.3']
         exclude:
-          - php: "7.0"
-            phpunit: "7.5"
-          - php: "7.0"
-            phpunit: "8.0"
-          - php: "7.0"
-            phpunit: "8.5"
-          - php: "7.0"
-            phpunit: "9.0"
-          - php: "7.0"
-            phpunit: "9.1"
-          - php: "7.1"
-            phpunit: "8.0"
-          - php: "7.1"
-            phpunit: "8.5"
-          - php: "7.1"
-            phpunit: "9.0"
-          - php: "7.1"
-            phpunit: "9.1"
-          - php: "7.2"
-            phpunit: "9.0"
-          - php: "7.2"
-            phpunit: "9.1"
-
-    name: PHP ${{ matrix.php }}; PHPUnit ${{ matrix.phpunit }}
+          - php: '7.0'
+            phpunit: '7.5'
+          - php: '7.0'
+            phpunit: '8.0'
+          - php: '7.0'
+            phpunit: '8.5'
+          - php: '7.0'
+            phpunit: '9.0'
+          - php: '7.0'
+            phpunit: '9.3'
+          - php: '7.1'
+            phpunit: '8.0'
+          - php: '7.1'
+            phpunit: '8.5'
+          - php: '7.1'
+            phpunit: '9.0'
+          - php: '7.1'
+            phpunit: '9.3'
+          - php: '7.2'
+            phpunit: '9.0'
+          - php: '7.2'
+            phpunit: '9.3'
+          - php: '7.4'
+            phpunit: '6.5'
+          - php: '8.0'
+            phpunit: '6.5'
+          - php: '8.0'
+            phpunit: '7.5'
+          - php: '8.0'
+            phpunit: '8.5'
+          - php: '8.0'
+            phpunit: '9.0'
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Pull Docker Image
-      run: docker pull registry.gitlab.com/grahamcampbell/php:${{ matrix.php }}
-    - name: Select PHPUnit
-      run: docker run --rm -w /data -v ${{ github.workspace }}:/data --entrypoint composer registry.gitlab.com/grahamcampbell/php:${{ matrix.php }} require "phpunit/phpunit:${{ matrix.phpunit }}.*" --no-update -n
-    - name: Run Composer
-      run: docker run --rm -w /data -v ${{ github.workspace }}:/data --entrypoint composer registry.gitlab.com/grahamcampbell/php:${{ matrix.php }} install --prefer-dist -n -o
-    - name: Run PHPUnit
-      run: docker run --rm -w /data -v ${{ github.workspace }}:/data --entrypoint vendor/bin/phpunit registry.gitlab.com/grahamcampbell/php:${{ matrix.php }} --coverage-clover build/logs/clover.xml
-    - name: Upload Coverage
-      run: docker run --rm -w /data -v ${{ github.workspace }}:/data --entrypoint ocular registry.gitlab.com/grahamcampbell/php:${{ matrix.php }} code-coverage:upload --format=php-clover build/logs/clover.xml
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          tools: composer:v2
+          coverage: none
+
+      - name: Setup Problem Matchers
+        run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
+
+      - name: Install PHP 7 Dependencies
+        uses: nick-invision/retry@v1
+        with:
+          timeout_minutes: 5
+          max_attempts: 5
+          command: |
+            composer require "phpunit/phpunit:${{ matrix.phpunit }}.*" --no-update --no-interaction
+            composer update --no-interaction --no-progress
+        if: "matrix.php < 8"
+
+      - name: Install PHP 8 Dependencies
+        uses: nick-invision/retry@v1
+        with:
+          timeout_minutes: 5
+          max_attempts: 5
+          command: |
+            composer require "phpunit/phpunit:${{ matrix.phpunit }}.*" "phpdocumentor/reflection-docblock:^5.2" --no-update --no-interaction
+            composer update --no-interaction --no-progress --ignore-platform-req=php
+        if: "matrix.php >= 8"
+
+      - name: Execute PHPUnit
+        run: vendor/bin/phpunit

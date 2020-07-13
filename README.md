@@ -6,35 +6,34 @@ Laravel TestBench Core was created by, and is maintained by [Graham Campbell](ht
 ![Banner](https://user-images.githubusercontent.com/2829600/71477508-68a5a600-27e2-11ea-91c9-da343f90b279.png)
 
 <p align="center">
+<a href="https://github.com/GrahamCampbell/TestBench-Core/actions?query=workflow%3ATests"><img src="https://img.shields.io/github/workflow/status/GrahamCampbell/TestBench-Core/Tests?label=Tests&style=flat-square" alt="Build Status"></img></a>
 <a href="https://github.styleci.io/repos/37913000"><img src="https://github.styleci.io/repos/37913000/shield" alt="StyleCI Status"></img></a>
-<a href="https://github.com/GrahamCampbell/Laravel-TestBench-Core/actions?query=workflow%3ATests"><img src="https://img.shields.io/github/workflow/status/GrahamCampbell/Laravel-TestBench-Core/Tests?style=flat-square" alt="Build Status"></img></a>
-<a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-TestBench-Core/code-structure"><img src="https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Laravel-TestBench-Core?style=flat-square" alt="Coverage Status"></img></a>
-<a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-TestBench-Core"><img src="https://img.shields.io/scrutinizer/g/GrahamCampbell/Laravel-TestBench-Core?style=flat-square" alt="Quality Score"></img></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square" alt="Software License"></img></a>
-<a href="https://github.com/GrahamCampbell/Laravel-TestBench-Core/releases"><img src="https://img.shields.io/github/release/GrahamCampbell/Laravel-TestBench-Core?style=flat-square" alt="Latest Version"></img></a>
+<a href="https://packagist.org/packages/graham-campbell/testbench-core"><img src="https://img.shields.io/packagist/dt/graham-campbell/testbench-core?style=flat-square" alt="Packagist Downloads"></img></a>
+<a href="https://github.com/GrahamCampbell/TestBench-Core/releases"><img src="https://img.shields.io/github/release/GrahamCampbell/TestBench-Core?style=flat-square" alt="Latest Version"></img></a>
 </p>
 
 
 ## Installation
 
-Laravel TestBench Core requires [PHP](https://php.net) 7.0-7.4, and supports [PHPUnit](https://phpunit.de/) 6-9 and Laravel 5.5-7.
+Laravel TestBench Core requires [PHP](https://php.net) 7.0-8.0, and supports [PHPUnit](https://phpunit.de/) 6-9 and Laravel 5.5-7.
 
 | TestBench Core | L5.1               | L5.2               | L5.3               | L5.4               | L5.5               | L5.6               | L5.7               | L5.8               | L6                 | L7                 |
 |----------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
 | 1.1            | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
 | 2.0            | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                |
-| 3.1            | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| 3.2            | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 
 | TestBench Core | PHPUnit 4.8        | PHPUnit 5          | PHPUnit 6          | PHPUnit 7          | PHPUnit 8          | PHPUnit 9          |
 |----------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
 | 1.1            | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                |
 | 2.0            | :x:                | :x:                | :white_check_mark: | :x:                | :x:                | :x:                |
-| 3.1            | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| 3.2            | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 
 To get the latest version, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
-$ composer require graham-campbell/testbench-core --dev
+$ composer require graham-campbell/testbench-core:^3.2 --dev
 ```
 
 Once installed, you can extend or implement the classes in this package, or packages required by this package. There are no service providers to register.
