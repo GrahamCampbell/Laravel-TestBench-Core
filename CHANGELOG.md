@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V3.2.1 (13/07/2020)
+
+* Corrected composer.json
+
+
 ## V3.2 (13/07/2020)
 
 * Provisional PHP 8.0 support
