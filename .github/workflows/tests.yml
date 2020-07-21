@@ -61,14 +61,19 @@ jobs:
       - name: Setup Problem Matchers
         run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
+      - name: Setup Dependencies
+        uses: nick-invision/retry@v1
+        with:
+          timeout_minutes: 5
+          max_attempts: 5
+          command: composer require "phpunit/phpunit:${{ matrix.phpunit }}.*" --no-update --no-interaction
+
       - name: Install PHP 7 Dependencies
         uses: nick-invision/retry@v1
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: |
-            composer require "phpunit/phpunit:${{ matrix.phpunit }}.*" --no-update --no-interaction
-            composer update --no-interaction --no-progress
+          command: composer update --no-interaction --no-progress
         if: "matrix.php < 8"
 
       - name: Install PHP 8 Dependencies
@@ -76,9 +81,7 @@ jobs:
         with:
           timeout_minutes: 5
           max_attempts: 5
-          command: |
-            composer require "phpunit/phpunit:${{ matrix.phpunit }}.*" --no-update --no-interaction
-            composer update --no-interaction --no-progress --ignore-platform-req=php
+          command: composer update --no-interaction --no-progress --ignore-platform-req=php
         if: "matrix.php >= 8"
 
       - name: Execute PHPUnit
