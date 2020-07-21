@@ -77,7 +77,7 @@ jobs:
           timeout_minutes: 5
           max_attempts: 5
           command: |
-            composer require "phpunit/phpunit:${{ matrix.phpunit }}.*" "phpdocumentor/reflection-docblock:^5.2" --no-update --no-interaction
+            composer require "phpunit/phpunit:${{ matrix.phpunit }}.*" --no-update --no-interaction
             composer update --no-interaction --no-progress --ignore-platform-req=php
         if: "matrix.php >= 8"
 
