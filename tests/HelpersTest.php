@@ -19,11 +19,6 @@ use InvalidArgumentException;
 use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\TestCase;
 
-/**
- * This is the helpers test class.
- *
- * @author Graham Campbell <graham@alt-three.com>
- */
 class HelpersTest extends TestCase
 {
     use HelperTrait;

@@ -25,9 +25,7 @@ use PHPUnit\Framework\TestCase;
 use PHPUnit\Util\InvalidArgumentHelper;
 
 /**
- * This is the analysis test class.
- *
- * @author Graham Campbell <graham@alt-three.com>
+ * @requires PHP < 8
  */
 class AnalysisTest extends TestCase
 {
