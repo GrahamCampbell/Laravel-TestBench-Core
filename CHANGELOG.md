@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V3.2.2 (25/07/2020)
+
+* Officially support Laravel 5.5-8
+
+
 ## V3.2.1 (13/07/2020)
 
 * Corrected composer.json
