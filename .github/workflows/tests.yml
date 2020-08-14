@@ -61,7 +61,7 @@ jobs:
       - name: Setup Problem Matchers
         run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
-      - name: Setup Dependencies
+      - name: Setup PHP Dependencies
         uses: nick-invision/retry@v1
         with:
           timeout_minutes: 5
