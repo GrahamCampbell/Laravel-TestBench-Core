@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V3.3 (UPCOMING)
+
+* Support PHPUnit 10 too
+
+
 ## V3.2.2 (25/07/2020)
 
 * Officially support Laravel 5.5-8

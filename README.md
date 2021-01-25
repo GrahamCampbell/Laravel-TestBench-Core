@@ -26,18 +26,18 @@ Laravel TestBench Core requires [PHP](https://php.net) 7.0-8.0, and supports [PH
 |----------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
 | 1.1            | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
 | 2.0            | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
-| 3.2            | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| 3.3            | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 
-| TestBench Core | PHPUnit 4.8        | PHPUnit 5          | PHPUnit 6          | PHPUnit 7          | PHPUnit 8          | PHPUnit 9          |
-|----------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
-| 1.1            | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                |
-| 2.0            | :x:                | :x:                | :white_check_mark: | :x:                | :x:                | :x:                |
-| 3.2            | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| TestBench Core | PHPUnit 4.8        | PHPUnit 5          | PHPUnit 6          | PHPUnit 7          | PHPUnit 8          | PHPUnit 9          | PHPUnit 10         |
+|----------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
+| 1.1            | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                |
+| 2.0            | :x:                | :x:                | :white_check_mark: | :x:                | :x:                | :x:                | :x:                |
+| 3.3            | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 
 To get the latest version, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
-$ composer require "graham-campbell/testbench-core:^3.2" --dev
+$ composer require "graham-campbell/testbench-core:^3.3" --dev
 ```
 
 Once installed, you can extend or implement the classes in this package, or packages required by this package. There are no service providers to register.
