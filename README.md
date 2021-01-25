@@ -37,7 +37,7 @@ Laravel TestBench Core requires [PHP](https://php.net) 7.0-8.0, and supports [PH
 To get the latest version, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
-$ composer require graham-campbell/testbench-core:^3.2 --dev
+$ composer require "graham-campbell/testbench-core:^3.2" --dev
 ```
 
 Once installed, you can extend or implement the classes in this package, or packages required by this package. There are no service providers to register.
