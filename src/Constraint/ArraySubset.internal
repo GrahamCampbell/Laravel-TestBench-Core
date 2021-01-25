@@ -19,7 +19,7 @@ use PHPUnit\Runner\Version;
 use SebastianBergmann\Comparator\ComparisonFailure;
 use Traversable;
 
-if (class_exists(Version::class) && (int) Version::series()[0] >= 9) {
+if (class_exists(Version::class) && version_compare(Version::id(), '9', '>=')) {
     /**
      * Constraint that asserts that the array it is evaluated for has a specified subset.
      *
