@@ -49,11 +49,9 @@ trait FacadeTrait
     /**
      * Get the service provider class.
      *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     *
      * @return string
      */
-    abstract protected function getServiceProviderClass($app);
+    abstract protected function getServiceProviderClass();
 
     public function testIsAFacade()
     {
