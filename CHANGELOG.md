@@ -5,6 +5,7 @@ CHANGE LOG
 ## V3.3 (UPCOMING)
 
 * Support PHPUnit 10 too
+* Remove app from getServiceProviderClass definition but not calls
 
 
 ## V3.2.2 (25/07/2020)
