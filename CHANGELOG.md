@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V3.3.1 (UPCOMING)
+
+* Provisional PHP 8.1 support
+
+
 ## V3.3 (29/03/2021)
 
 * Support PHPUnit 10 too
