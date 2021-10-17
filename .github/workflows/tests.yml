@@ -44,6 +44,8 @@ jobs:
             phpunit: '10.0'
           - php: '7.3'
             phpunit: '10.0'
+          - php: '7.4'
+            phpunit: '10.0'
           - php: '8.0'
             phpunit: '6.5'
           - php: '8.0'
