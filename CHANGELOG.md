@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V3.3 (UPCOMING)
+
+* Support Laravel 9 too
+
+
 ## V3.3.2 (21/11/2021)
 
 * Updated package metadata
