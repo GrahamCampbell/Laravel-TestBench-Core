@@ -16,19 +16,19 @@ Laravel TestBench Core was created by, and is maintained by [Graham Campbell](ht
 
 ## Installation
 
-This version requires [PHP](https://www.php.net/) 7.0-8.1 and supports [PHPUnit](https://phpunit.de/) 6-10 and [Laravel](https://laravel.com/) 5.5-9.
+This version requires [PHP](https://www.php.net/) 7.0-8.1 and supports [PHPUnit](https://phpunit.de/) 6-9 and [Laravel](https://laravel.com/) 5.5-9.
 
-| TestBench Core | L5.1               | L5.2               | L5.3               | L5.4               | L5.5               | L5.6               | L5.7               | L5.8               | L6                 | L7                 | L8                 | L9                 |
-|----------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
-| 1.1            | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
-| 2.0            | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
-| 3.4            | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| TestBench Core | L5.1               | L5.2               | L5.3               | L5.4               | L5.5               | L5.6               | L5.7               | L5.8               | L6                 | L7                 | L8                 | L9                 | L10                |
+|----------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
+| 1.1            | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
+| 2.0            | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
+| 3.4            | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                |
 
 | TestBench Core | PHPUnit 4.8        | PHPUnit 5          | PHPUnit 6          | PHPUnit 7          | PHPUnit 8          | PHPUnit 9          | PHPUnit 10         |
 |----------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
 | 1.1            | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                |
 | 2.0            | :x:                | :x:                | :white_check_mark: | :x:                | :x:                | :x:                | :x:                |
-| 3.4            | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| 3.4            | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                |
 
 To get the latest version, simply require the project using [Composer](https://getcomposer.org/):
 

@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V3.4.1 (24/01/2022)
+
+* Removed incorrect PHPUnit 10 support after they made breaking changes before release
+
+
 ## V3.4 (24/01/2022)
 
 * Support Laravel 9 too
