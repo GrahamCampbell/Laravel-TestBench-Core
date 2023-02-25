@@ -38,7 +38,7 @@ trait LaravelTrait
 
         try {
             $class = $this->makeInjectableClass($name);
-            $this->assertInstanceOf($name, $class->getInjectedObject());
+            static::assertInstanceOf($name, $class->getInjectedObject());
         } catch (Exception $e) {
             $injectable = false;
             if ($msg = $e->getMessage()) {
@@ -46,7 +46,7 @@ trait LaravelTrait
             }
         }
 
-        $this->assertTrue($injectable, $message);
+        static::assertTrue($injectable, $message);
     }
 
     /**

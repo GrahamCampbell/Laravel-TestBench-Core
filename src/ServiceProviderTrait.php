@@ -29,11 +29,11 @@ trait ServiceProviderTrait
      *
      * @return string
      */
-    abstract protected function getServiceProviderClass();
+    abstract protected static function getServiceProviderClass();
 
     public function testIsAServiceProvider()
     {
-        $class = $this->getServiceProviderClass($this->app);
+        $class = static::getServiceProviderClass();
 
         $reflection = new ReflectionClass($class);
 
@@ -41,12 +41,12 @@ trait ServiceProviderTrait
 
         $msg = "Expected class '$class' to be a service provider.";
 
-        $this->assertTrue($reflection->isSubclassOf($provider), $msg);
+        static::assertTrue($reflection->isSubclassOf($provider), $msg);
     }
 
     public function testProvides()
     {
-        $class = $this->getServiceProviderClass($this->app);
+        $class = static::getServiceProviderClass();
         $reflection = new ReflectionClass($class);
 
         $method = $reflection->getMethod('provides');
@@ -55,9 +55,9 @@ trait ServiceProviderTrait
         $msg = "Expected class '$class' to provide a valid list of services.";
 
         if (is_callable([Assert::class, 'assertIsArray'])) {
-            $this->assertIsArray($method->invoke(new $class($this->app)), $msg);
+            static::assertIsArray($method->invoke(new $class($this->app)), $msg);
         } else {
-            $this->assertInternalType('array', $method->invoke(new $class($this->app)), $msg);
+            static::assertInternalType('array', $method->invoke(new $class($this->app)), $msg);
         }
     }
 }

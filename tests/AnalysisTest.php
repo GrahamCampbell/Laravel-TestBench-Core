@@ -20,13 +20,8 @@ use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Mockery;
-use PHPUnit\Framework\InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
-use PHPUnit\Util\InvalidArgumentHelper;
 
-/**
- * @requires PHP < 8
- */
 class AnalysisTest extends TestCase
 {
     use AnalysisTrait;
@@ -36,7 +31,7 @@ class AnalysisTest extends TestCase
      *
      * @return string[]
      */
-    protected function getPaths()
+    protected static function getPaths()
     {
         return [
             realpath(__DIR__.'/../src'),
@@ -49,14 +44,12 @@ class AnalysisTest extends TestCase
      *
      * @return string[]
      */
-    protected function getIgnored()
+    protected static function getIgnored()
     {
         return [
             Application::class,
             ArraySubset::class,
             Facade::class,
-            InvalidArgumentException::class,
-            InvalidArgumentHelper::class,
             Mockery::class,
             ServiceProvider::class,
             Str::class,

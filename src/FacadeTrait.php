@@ -30,70 +30,70 @@ trait FacadeTrait
      *
      * @return string
      */
-    abstract protected function getFacadeAccessor();
+    abstract protected static function getFacadeAccessor();
 
     /**
      * Get the facade class.
      *
      * @return string
      */
-    abstract protected function getFacadeClass();
+    abstract protected static function getFacadeClass();
 
     /**
      * Get the facade root.
      *
      * @return string
      */
-    abstract protected function getFacadeRoot();
+    abstract protected static function getFacadeRoot();
 
     /**
      * Get the service provider class.
      *
      * @return string
      */
-    abstract protected function getServiceProviderClass();
+    abstract protected static function getServiceProviderClass();
 
     public function testIsAFacade()
     {
-        $class = $this->getFacadeClass();
+        $class = static::getFacadeClass();
         $reflection = new ReflectionClass($class);
         $facade = new ReflectionClass(Facade::class);
 
         $msg = "Expected class '$class' to be a facade.";
 
-        $this->assertTrue($reflection->isSubclassOf($facade), $msg);
+        static::assertTrue($reflection->isSubclassOf($facade), $msg);
     }
 
     public function testFacadeAccessor()
     {
-        $accessor = $this->getFacadeAccessor();
-        $class = $this->getFacadeClass();
+        $accessor = static::getFacadeAccessor();
+        $class = static::getFacadeClass();
         $reflection = new ReflectionClass($class);
         $method = $reflection->getMethod('getFacadeAccessor');
         $method->setAccessible(true);
 
         $msg = "Expected class '$class' to have an accessor of '$accessor'.";
 
-        $this->assertSame($accessor, $method->invoke(null), $msg);
+        static::assertSame($accessor, $method->invoke(null), $msg);
     }
 
     public function testFacadeRoot()
     {
-        $root = $this->getFacadeRoot();
-        $class = $this->getFacadeClass();
+        $root = static::getFacadeRoot();
+        $class = static::getFacadeClass();
         $reflection = new ReflectionClass($class);
         $method = $reflection->getMethod('getFacadeRoot');
         $method->setAccessible(true);
 
         $msg = "Expected class '$class' to have a root of '$root'.";
 
-        $this->assertInstanceOf($root, $method->invoke(null), $msg);
+        static::assertInstanceOf($root, $method->invoke(null), $msg);
     }
 
     public function testServiceProvider()
     {
-        $accessor = $this->getFacadeAccessor();
-        $provider = $this->getServiceProviderClass($this->app);
+        $accessor = static::getFacadeAccessor();
+        $provider = static::getServiceProviderClass($this->app);
 
         if ($provider) {
             $reflection = new ReflectionClass($provider);
@@ -102,7 +102,7 @@ trait FacadeTrait
 
             $msg = "Expected class '$provider' to provide '$accessor'.";
 
-            $this->assertInArray($accessor, $method->invoke(new $provider($this->app)), $msg);
+            static::assertInArray($accessor, $method->invoke(new $provider($this->app)), $msg);
         }
     }
 }

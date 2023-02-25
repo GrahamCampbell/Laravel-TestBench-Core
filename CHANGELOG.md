@@ -2,6 +2,15 @@ CHANGE LOG
 ==========
 
 
+## V4.0 (UPCOMING)
+
+* Support PHP 7.4-8.2 only
+* Support PHPUnit 9-10 only
+* Support Laravel 8-10 only
+* `FacadeTrait` methods `getFacadeAccessor`, `getFacadeClass`, `getFacadeRoot` and `getServiceProviderClass` are now `static`
+* `ServiceProviderTrait::getServiceProviderClass` is now `static` and no longer receives app as param 1
+
+
 ## V3.4.1 (25/02/2023)
 
 * Removed incorrect PHPUnit 10 support after they made breaking changes before release
