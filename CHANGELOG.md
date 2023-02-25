@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V3.4.1 (24/01/2022)
+## V3.4.1 (25/02/2023)
 
 * Removed incorrect PHPUnit 10 support after they made breaking changes before release
 
