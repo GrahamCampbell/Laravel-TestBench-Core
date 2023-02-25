@@ -29,12 +29,12 @@ final class ArraySubset extends Constraint
     /**
      * @var iterable
      */
-    private $subset;
+    private iterable $subset;
 
     /**
      * @var bool
      */
-    private $strict;
+    private bool $strict;
 
     /**
      * Create a new array subset constraint instance.

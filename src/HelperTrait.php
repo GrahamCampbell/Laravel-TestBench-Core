@@ -34,7 +34,7 @@ trait HelperTrait
      *
      * @return void
      */
-    public static function assertInArray($needle, array $haystack, string $msg = '')
+    public static function assertInArray($needle, array $haystack, string $msg = ''): void
     {
         if ($msg === '') {
             $msg = "Expected the array to contain the element '$needle'.";
@@ -52,7 +52,7 @@ trait HelperTrait
      *
      * @return void
      */
-    public static function assertMethodExists(string $method, string $class, string $msg = '')
+    public static function assertMethodExists(string $method, string $class, string $msg = ''): void
     {
         if ($msg === '') {
             $msg = "Expected the class '$class' to have method '$method'.";
@@ -72,7 +72,7 @@ trait HelperTrait
      *
      * @return void
      */
-    public static function assertInJson(string $needle, array $haystack, string $msg = '')
+    public static function assertInJson(string $needle, array $haystack, string $msg = ''): void
     {
         if ($msg === '') {
             $msg = "Expected the array to contain the element '$needle'.";

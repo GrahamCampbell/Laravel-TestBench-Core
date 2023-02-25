@@ -29,9 +29,9 @@ trait ServiceProviderTrait
      *
      * @return string
      */
-    abstract protected static function getServiceProviderClass();
+    abstract protected static function getServiceProviderClass(): string;
 
-    public function testIsAServiceProvider()
+    public function testIsAServiceProvider(): void
     {
         $class = static::getServiceProviderClass();
 
@@ -44,7 +44,7 @@ trait ServiceProviderTrait
         static::assertTrue($reflection->isSubclassOf($provider), $msg);
     }
 
-    public function testProvides()
+    public function testProvides(): void
     {
         $class = static::getServiceProviderClass();
         $reflection = new ReflectionClass($class);

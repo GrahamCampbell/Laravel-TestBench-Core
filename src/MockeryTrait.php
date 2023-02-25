@@ -29,7 +29,7 @@ trait MockeryTrait
      *
      * @return void
      */
-    public function tearDownMockery()
+    public function tearDownMockery(): void
     {
         if (class_exists(Mockery::class, false)) {
             $container = Mockery::getContainer();

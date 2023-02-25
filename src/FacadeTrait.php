@@ -30,30 +30,30 @@ trait FacadeTrait
      *
      * @return string
      */
-    abstract protected static function getFacadeAccessor();
+    abstract protected static function getFacadeAccessor(): string;
 
     /**
      * Get the facade class.
      *
      * @return string
      */
-    abstract protected static function getFacadeClass();
+    abstract protected static function getFacadeClass(): string;
 
     /**
      * Get the facade root.
      *
      * @return string
      */
-    abstract protected static function getFacadeRoot();
+    abstract protected static function getFacadeRoot(): string;
 
     /**
      * Get the service provider class.
      *
      * @return string
      */
-    abstract protected static function getServiceProviderClass();
+    abstract protected static function getServiceProviderClass(): string;
 
-    public function testIsAFacade()
+    public function testIsAFacade(): void
     {
         $class = static::getFacadeClass();
         $reflection = new ReflectionClass($class);
@@ -64,7 +64,7 @@ trait FacadeTrait
         static::assertTrue($reflection->isSubclassOf($facade), $msg);
     }
 
-    public function testFacadeAccessor()
+    public function testFacadeAccessor(): void
     {
         $accessor = static::getFacadeAccessor();
         $class = static::getFacadeClass();
@@ -77,7 +77,7 @@ trait FacadeTrait
         static::assertSame($accessor, $method->invoke(null), $msg);
     }
 
-    public function testFacadeRoot()
+    public function testFacadeRoot(): void
     {
         $root = static::getFacadeRoot();
         $class = static::getFacadeClass();
@@ -90,7 +90,7 @@ trait FacadeTrait
         static::assertInstanceOf($root, $method->invoke(null), $msg);
     }
 
-    public function testServiceProvider()
+    public function testServiceProvider(): void
     {
         $accessor = static::getFacadeAccessor();
         $provider = static::getServiceProviderClass($this->app);

@@ -23,61 +23,61 @@ class HelpersTest extends TestCase
 {
     use HelperTrait;
 
-    public function testInArray()
+    public function testInArray(): void
     {
         self::assertInArray('foo', ['foo']);
     }
 
-    public function testNotInArray()
+    public function testNotInArray(): void
     {
         self::expectException(ExpectationFailedException::class);
         self::assertInArray('foo', ['bar']);
     }
 
-    public function testMethodDoesExist()
+    public function testMethodDoesExist(): void
     {
         self::assertMethodExists('getBar', FooStub::class);
     }
 
-    public function testMethodDoesNotExist()
+    public function testMethodDoesNotExist(): void
     {
         self::expectException(ExpectationFailedException::class);
         self::assertMethodExists('getFoo', FooStub::class);
     }
 
-    public function testInJson()
+    public function testInJson(): void
     {
         self::assertInJson('{"foo":"bar"}', ['foo' => 'bar']);
         self::assertInJson('{ "foo": "bar", "bar": "baz" }', ['foo' => 'bar']);
         self::assertInJson('{ "foo": "bar", "bar": "baz" }', ['bar' => 'baz']);
     }
 
-    public function testNotInJsonOne()
+    public function testNotInJsonOne(): void
     {
         self::expectException(ExpectationFailedException::class);
         self::assertInJson('{"foo":"baz"}', ['foo' => 'bar']);
     }
 
-    public function testNotInJsonTwo()
+    public function testNotInJsonTwo(): void
     {
         self::expectException(ExpectationFailedException::class);
         self::assertInJson('{ "foo": "bar", "bar": "baz" }', ['foo' => 'baz']);
     }
 
-    public function testBadJsonInNotInJson()
+    public function testBadJsonInNotInJson(): void
     {
         self::expectException(InvalidArgumentException::class);
         self::assertInJson('foobar', ['foo' => 'bar']);
     }
 
-    public function testAssertArraySubsetBadArg1()
+    public function testAssertArraySubsetBadArg1(): void
     {
         $this->expectException(TypeError::class);
 
         self::assertArraySubset(123, []);
     }
 
-    public function testAssertArraySubsetBadArg2()
+    public function testAssertArraySubsetBadArg2(): void
     {
         $this->expectException(TypeError::class);
 

@@ -9,6 +9,7 @@ CHANGE LOG
 * Support Laravel 8-10 only
 * `FacadeTrait` methods `getFacadeAccessor`, `getFacadeClass`, `getFacadeRoot` and `getServiceProviderClass` are now `static`
 * `ServiceProviderTrait::getServiceProviderClass` is now `static` and no longer receives app as param 1
+* Added property and return types in all places
 
 
 ## V3.4.1 (25/02/2023)
