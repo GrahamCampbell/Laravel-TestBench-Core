@@ -12,20 +12,20 @@ jobs:
     strategy:
       matrix:
         php: ['7.4', '8.0', '8.1', '8.2', '8.3']
-        phpunit: ['9.5', '9.6', '10.0', '10.5']
+        phpunit: ['9.5', '9.6', '10.1', '10.5']
         exclude:
           - php: '7.4'
-            phpunit: '10.0'
+            phpunit: '10.1'
           - php: '7.4'
             phpunit: '10.5'
           - php: '8.0'
-            phpunit: '10.0'
+            phpunit: '10.1'
           - php: '8.0'
             phpunit: '10.5'
           - php: '8.3'
             phpunit: '9.5'
           - php: '8.3'
-            phpunit: '10.0'
+            phpunit: '10.1'
 
     steps:
       - name: Checkout Code
