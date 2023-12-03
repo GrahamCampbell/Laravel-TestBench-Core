@@ -2,6 +2,12 @@ CHANGE LOG
 ==========
 
 
+## V4.1 (UPCOMING)
+
+* Add provisional PHP 8.3 support
+* Add provisional Laravel 11 support
+
+
 ## V4.0 (25/02/2023)
 
 * Support PHP 7.4-8.2 only
