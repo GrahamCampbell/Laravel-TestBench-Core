@@ -44,14 +44,14 @@ jobs:
         run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
       - name: Setup PHP Dependencies
-        uses: nick-invision/retry@v2
+        uses: nick-invision/retry@v3
         with:
           timeout_minutes: 5
           max_attempts: 5
           command: composer require "phpunit/phpunit:${{ matrix.phpunit }}.*" --no-update --no-interaction
 
       - name: Install PHP Dependencies
-        uses: nick-invision/retry@v2
+        uses: nick-invision/retry@v3
         with:
           timeout_minutes: 5
           max_attempts: 5
