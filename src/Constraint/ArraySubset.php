@@ -15,9 +15,9 @@ namespace GrahamCampbell\TestBenchCore\Constraint;
 
 use ArrayObject;
 use PHPUnit\Framework\Constraint\Constraint;
-use SebastianBergmann\Exporter\Exporter as LegacyExporter;
 use PHPUnit\Util\Exporter;
 use SebastianBergmann\Comparator\ComparisonFailure;
+use SebastianBergmann\Exporter\Exporter as LegacyExporter;
 use Traversable;
 
 /**
