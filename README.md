@@ -24,11 +24,11 @@ This version requires [PHP](https://www.php.net/) 7.4-8.4 and supports [PHPUnit]
 | 3.4            | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                |
 | 4.2            | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 
-| TestBench Core | PHPUnit 6          | PHPUnit 7          | PHPUnit 8          | PHPUnit 9          | PHPUnit 10         | PHPUnit 11         | PHPUnit 12         |
-|----------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
-| 2.0            | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
-| 3.4            | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                |
-| 4.2            | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                |
+| TestBench Core | PHPUnit 6          | PHPUnit 7          | PHPUnit 8          | PHPUnit 9          | PHPUnit 10         | PHPUnit 11         |
+|----------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
+| 2.0            | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                |
+| 3.4            | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                |
+| 4.2            | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 
 To get the latest version, simply require the project using [Composer](https://getcomposer.org/):
 

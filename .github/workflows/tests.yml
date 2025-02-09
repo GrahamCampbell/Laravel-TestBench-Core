@@ -59,7 +59,24 @@ jobs:
       - name: Setup Problem Matchers
         run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
-      - name: Setup PHP Dependencies
+
+      - name: Setup Analyzer v4
+        uses: nick-invision/retry@v3
+        with:
+          timeout_minutes: 5
+          max_attempts: 5
+          command: composer require "graham-campbell/analyzer:^4.2" --no-update --no-interaction
+        if: ${{ matrix.phpunit == '9.5' || matrix.phpunit == '9.6' || matrix.phpunit == '10.1' || matrix.phpunit == '10.5' }}
+
+      - name: Setup Analyzer v5
+        uses: nick-invision/retry@v3
+        with:
+          timeout_minutes: 5
+          max_attempts: 5
+          command: composer require "graham-campbell/analyzer:^5.0" --no-update --no-interaction
+        if: ${{ matrix.phpunit == '11.0' || matrix.phpunit == '11.5' }}
+
+      - name: Setup PHPUnit
         uses: nick-invision/retry@v3
         with:
           timeout_minutes: 5
