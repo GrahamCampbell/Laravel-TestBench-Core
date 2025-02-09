@@ -15,6 +15,7 @@ namespace GrahamCampbell\TestBenchCore\Constraint;
 
 use ArrayObject;
 use PHPUnit\Framework\Constraint\Constraint;
+use SebastianBergmann\Exporter\Exporter as LegacyExporter;
 use PHPUnit\Util\Exporter;
 use SebastianBergmann\Comparator\ComparisonFailure;
 use Traversable;
@@ -107,13 +108,17 @@ final class ArraySubset extends Constraint
      *
      * @return string
      */
-    public function toString(): string
+    public function toString(bool $exportObjects = false): string
     {
-        $exporterFn = method_exists($this, 'exporter')
-            ? fn ($v) => $this->exporter()->export($v)
-            : fn ($v) => Exporter::export($v);
+        if (class_exists(Exporter::class)) {
+            return Exporter::export($this->subset, $exportObjects);
+        }
 
-        return 'has the subset '.$exporterFn($this->subset);
+        if (method_exists($this, 'exporter')) {
+            return 'has the subset '.$this->exporter()->export($this->subset);
+        }
+
+        return 'has the subset '.(new LegacyExporter())->export($this->subset);
     }
 
     /**
@@ -128,7 +133,7 @@ final class ArraySubset extends Constraint
      */
     protected function failureDescription($other): string
     {
-        return 'an array '.$this->toString();
+        return 'an array '.$this->toString(true);
     }
 
     /**
