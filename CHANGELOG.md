@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V4.2.1 (09/02/2025)
+
+* Fixed deprecation warning in `MockeryTrait`
+
+
 ## V4.2 (09/02/2025)
 
 * Support Laravel 12 and PHPUnit 11
