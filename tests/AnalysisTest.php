@@ -21,6 +21,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Mockery;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Util\Exporter;
 
 class AnalysisTest extends TestCase
 {
@@ -49,6 +50,7 @@ class AnalysisTest extends TestCase
         return [
             Application::class,
             ArraySubset::class,
+            Exporter::class,
             Facade::class,
             Mockery::class,
             ServiceProvider::class,
