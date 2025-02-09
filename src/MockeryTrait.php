@@ -14,31 +14,61 @@ declare(strict_types=1);
 namespace GrahamCampbell\TestBenchCore;
 
 use Mockery;
+use PHPUnit\Framework\Attributes\After;
 
-/**
- * This is the mockery trait.
- *
- * @author Graham Campbell <hello@gjcampbell.co.uk>
- */
-trait MockeryTrait
-{
+if (class_exists(After::class)) {
     /**
-     * Tear down mockery.
+     * This is the mockery trait.
      *
-     * @after
-     *
-     * @return void
+     * @author Graham Campbell <hello@gjcampbell.co.uk>
      */
-    public function tearDownMockery(): void
+    trait MockeryTrait
     {
-        if (class_exists(Mockery::class, false)) {
-            $container = Mockery::getContainer();
+        /**
+         * Tear down mockery.
+         *
+         * @return void
+         */
+        #[After]
+        public function tearDownMockery(): void
+        {
+            if (class_exists(Mockery::class, false)) {
+                $container = Mockery::getContainer();
 
-            if ($container) {
-                $this->addToAssertionCount($container->mockery_getExpectationCount());
+                if ($container) {
+                    $this->addToAssertionCount($container->mockery_getExpectationCount());
+                }
+
+                Mockery::close();
             }
+        }
+    }
+} else {
+    /**
+     * This is the mockery trait.
+     *
+     * @author Graham Campbell <hello@gjcampbell.co.uk>
+     */
+    trait MockeryTrait
+    {
+        /**
+         * Tear down mockery.
+         *
+         * @after
+         *
+         * @return void
+         */
+        public function tearDownMockery(): void
+        {
+            if (class_exists(Mockery::class, false)) {
+                $container = Mockery::getContainer();
 
-            Mockery::close();
+                if ($container) {
+                    $this->addToAssertionCount($container->mockery_getExpectationCount());
+                }
+
+                Mockery::close();
+            }
         }
     }
 }

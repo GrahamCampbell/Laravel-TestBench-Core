@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Mockery;
+use PHPUnit\Framework\Attributes\After;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Util\Exporter;
 
@@ -48,6 +49,7 @@ class AnalysisTest extends TestCase
     protected static function getIgnored(): array
     {
         return [
+            After::class,
             Application::class,
             ArraySubset::class,
             Exporter::class,
