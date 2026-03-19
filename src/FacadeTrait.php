@@ -70,7 +70,10 @@ trait FacadeTrait
         $class = static::getFacadeClass();
         $reflection = new ReflectionClass($class);
         $method = $reflection->getMethod('getFacadeAccessor');
-        $method->setAccessible(true);
+
+        if (PHP_VERSION_ID < 80100) {
+            $method->setAccessible(true);
+        }
 
         $msg = "Expected class '$class' to have an accessor of '$accessor'.";
 
@@ -83,7 +86,10 @@ trait FacadeTrait
         $class = static::getFacadeClass();
         $reflection = new ReflectionClass($class);
         $method = $reflection->getMethod('getFacadeRoot');
-        $method->setAccessible(true);
+
+        if (PHP_VERSION_ID < 80100) {
+            $method->setAccessible(true);
+        }
 
         $msg = "Expected class '$class' to have a root of '$root'.";
 
@@ -96,13 +102,11 @@ trait FacadeTrait
         $provider = static::getServiceProviderClass($this->app);
 
         if ($provider) {
-            $reflection = new ReflectionClass($provider);
-            $method = $reflection->getMethod('provides');
-            $method->setAccessible(true);
+            $instance = new $provider($this->app);
 
             $msg = "Expected class '$provider' to provide '$accessor'.";
 
-            static::assertInArray($accessor, $method->invoke(new $provider($this->app)), $msg);
+            static::assertInArray($accessor, $instance->provides(), $msg);
         }
     }
 }

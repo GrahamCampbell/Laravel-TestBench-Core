@@ -15,8 +15,8 @@
         "symfony/polyfill-php80": "^1.26"
     },
     "require-dev": {
-        "graham-campbell/analyzer": "^4.2 || ^5.0",
-        "phpunit/phpunit": "^9.5 || ^10.1 || ^11.0"
+        "graham-campbell/analyzer": "^4.2.1 || ^5.1",
+        "phpunit/phpunit": "^9.5 || ^10.5 || ^11.5 || ^12.5"
     },
     "suggest": {
         "illuminate/support": "Required to use the laravel trait.",

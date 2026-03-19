@@ -47,17 +47,15 @@ trait ServiceProviderTrait
     public function testProvides(): void
     {
         $class = static::getServiceProviderClass();
-        $reflection = new ReflectionClass($class);
-
-        $method = $reflection->getMethod('provides');
-        $method->setAccessible(true);
+        $provider = new $class($this->app);
+        $services = $provider->provides();
 
         $msg = "Expected class '$class' to provide a valid list of services.";
 
         if (is_callable([Assert::class, 'assertIsArray'])) {
-            static::assertIsArray($method->invoke(new $class($this->app)), $msg);
+            static::assertIsArray($services, $msg);
         } else {
-            static::assertInternalType('array', $method->invoke(new $class($this->app)), $msg);
+            static::assertInternalType('array', $services, $msg);
         }
     }
 }

@@ -16,24 +16,24 @@ Laravel TestBench Core was created by, and is maintained by [Graham Campbell](ht
 
 ## Installation
 
-This version requires [PHP](https://www.php.net/) 7.4-8.4 and supports [PHPUnit](https://phpunit.de/) 9-11 and [Laravel](https://laravel.com/) 8-12. PHPUnit 12 is not supported due to volatility across minor releases. We would highly recommend sticking with PHPUnit 11 at this time.
+This version requires [PHP](https://www.php.net/) 7.4-8.5 and supports [PHPUnit](https://phpunit.de/) 9-12 and [Laravel](https://laravel.com/) 8-13. PHPUnit 13 is not supported due to volatility across minor releases. We would highly recommend sticking with PHPUnit 12 at this time.
 
-| TestBench Core | L5.5               | L5.6               | L5.7               | L5.8               | L6                 | L7                 | L8                 | L9                 | L10                | L11                | L12                |
-|----------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
-| 2.0            | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
-| 3.4            | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                |
-| 4.2            | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| TestBench Core | L5.5               | L5.6               | L5.7               | L5.8               | L6                 | L7                 | L8                 | L9                 | L10                | L11                | L12                | L13                |
+|----------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
+| 2.0            | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
+| 3.4            | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                | :x:                |
+| 4.3            | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 
-| TestBench Core | PHPUnit 6          | PHPUnit 7          | PHPUnit 8          | PHPUnit 9          | PHPUnit 10         | PHPUnit 11         |
-|----------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
-| 2.0            | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                |
-| 3.4            | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                |
-| 4.2            | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| TestBench Core | PHPUnit 6          | PHPUnit 7          | PHPUnit 8          | PHPUnit 9          | PHPUnit 10         | PHPUnit 11         | PHPUnit 12         |
+|----------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
+| 2.0            | :white_check_mark: | :x:                | :x:                | :x:                | :x:                | :x:                | :x:                |
+| 3.4            | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                | :x:                | :x:                |
+| 4.3            | :x:                | :x:                | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 
 To get the latest version, simply require the project using [Composer](https://getcomposer.org/):
 
 ```bash
-$ composer require "graham-campbell/testbench-core:^4.2" --dev
+$ composer require "graham-campbell/testbench-core:^4.3" --dev
 ```
 
 Once installed, you can extend or implement the classes in this package, or packages required by this package. There are no service providers to register.

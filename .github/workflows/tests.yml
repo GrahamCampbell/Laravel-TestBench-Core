@@ -11,41 +11,29 @@ jobs:
 
     strategy:
       matrix:
-        php: ['7.4', '8.0', '8.1', '8.2', '8.3', '8.4']
-        phpunit: ['9.5', '9.6', '10.1', '10.5', '11.0', '11.5']
+        php: ['7.4', '8.0', '8.1', '8.2', '8.3', '8.4', '8.5']
+        phpunit: ['9.6', '10.5', '11.5', '12.5']
         exclude:
           - php: '7.4'
-            phpunit: '10.1'
-          - php: '7.4'
             phpunit: '10.5'
           - php: '7.4'
-            phpunit: '11.0'
-          - php: '7.4'
             phpunit: '11.5'
-          - php: '8.0'
-            phpunit: '10.1'
+          - php: '7.4'
+            phpunit: '12.5'
           - php: '8.0'
             phpunit: '10.5'
           - php: '8.0'
-            phpunit: '11.0'
+            phpunit: '11.5'
           - php: '8.0'
-            phpunit: '11.5'
-          - php: '8.1'
-            phpunit: '11.0'
+            phpunit: '12.5'
           - php: '8.1'
             phpunit: '11.5'
-          - php: '8.3'
-            phpunit: '9.5'
-          - php: '8.3'
-            phpunit: '10.1'
-          - php: '8.4'
-            phpunit: '9.5'
-          - php: '8.4'
-            phpunit: '10.1'
+          - php: '8.1'
+            phpunit: '12.5'
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -61,7 +49,7 @@ jobs:
 
 
       - name: Setup Analyzer v4
-        uses: nick-invision/retry@v3
+        uses: nick-fields/retry@v3
         with:
           timeout_minutes: 5
           max_attempts: 5
@@ -69,7 +57,7 @@ jobs:
         if: ${{ matrix.phpunit == '9.5' || matrix.phpunit == '9.6' || matrix.phpunit == '10.1' || matrix.phpunit == '10.5' }}
 
       - name: Setup Analyzer v5
-        uses: nick-invision/retry@v3
+        uses: nick-fields/retry@v3
         with:
           timeout_minutes: 5
           max_attempts: 5
@@ -77,14 +65,14 @@ jobs:
         if: ${{ matrix.phpunit == '11.0' || matrix.phpunit == '11.5' }}
 
       - name: Setup PHPUnit
-        uses: nick-invision/retry@v3
+        uses: nick-fields/retry@v3
         with:
           timeout_minutes: 5
           max_attempts: 5
           command: composer require "phpunit/phpunit:${{ matrix.phpunit }}.*" --no-update --no-interaction
 
       - name: Install PHP Dependencies
-        uses: nick-invision/retry@v3
+        uses: nick-fields/retry@v3
         with:
           timeout_minutes: 5
           max_attempts: 5
