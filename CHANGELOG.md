@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V4.3 (UPCOMING)
+## V4.3 (19/03/2026)
 
 * Support PHP 8.5, PHPUnit 12 and Laravel 13
 
