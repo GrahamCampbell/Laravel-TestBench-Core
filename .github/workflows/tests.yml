@@ -51,7 +51,7 @@ jobs:
 
 
       - name: Setup Analyzer v4
-        uses: nick-fields/retry@v3
+        uses: nick-invision/retry@v4
         with:
           timeout_minutes: 5
           max_attempts: 5
@@ -59,7 +59,7 @@ jobs:
         if: ${{ matrix.phpunit == '9.5' || matrix.phpunit == '9.6' || matrix.phpunit == '10.1' || matrix.phpunit == '10.5' }}
 
       - name: Setup Analyzer v5
-        uses: nick-fields/retry@v3
+        uses: nick-invision/retry@v4
         with:
           timeout_minutes: 5
           max_attempts: 5
@@ -67,14 +67,14 @@ jobs:
         if: ${{ matrix.phpunit == '11.0' || matrix.phpunit == '11.5' }}
 
       - name: Setup PHPUnit
-        uses: nick-fields/retry@v3
+        uses: nick-invision/retry@v4
         with:
           timeout_minutes: 5
           max_attempts: 5
           command: composer require "phpunit/phpunit:${{ matrix.phpunit }}.*" --no-update --no-interaction
 
       - name: Install PHP Dependencies
-        uses: nick-fields/retry@v3
+        uses: nick-invision/retry@v4
         with:
           timeout_minutes: 5
           max_attempts: 5
